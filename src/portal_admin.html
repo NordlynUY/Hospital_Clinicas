@@ -1,0 +1,1005 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Hospital de Clínicas | Portal Administrador</title>
+
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+		rel="stylesheet">
+
+	<style>
+
+		body{
+			background:#f8f9fa;
+		}
+
+		.hero{
+			background:linear-gradient(135deg,#6f42c1,#4b2a83);
+			color:white;
+			padding:60px 20px;
+			text-align:center;
+		}
+
+		.card{
+			border:none;
+		}
+
+		.card:hover{
+			transform:translateY(-3px);
+			transition:.3s;
+		}
+
+		footer{
+			background:#6f42c1;
+			color:white;
+		}
+
+		.accordion-button:not(.collapsed){
+			background:#eee6ff;
+			color:#6f42c1;
+		}
+
+	</style>
+</head>
+
+
+
+<body>
+<!-- NAVBAR -->
+	<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+		<div class="container">
+			<a class="navbar-brand fw-bold text-purple" href="#" style="color:#6f42c1;">
+				Hospital de Clínicas
+			</a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="menu">
+				<ul class="navbar-nav ms-auto">
+
+					<li class="nav-item">
+						<a class="nav-link active" href="#">
+							Inicio
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#usuarios">
+							Usuarios
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#funcionarios">
+							Funcionarios
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#documentos">
+							Documentos
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#encuestas">
+							Encuestas
+						</a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="#faq">
+							FAQ
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link text-danger" href="#">
+							Cerrar sesión
+						</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+
+<!-- HERO -->
+	<section class="hero">
+		<div class="container">
+			<h1 class="display-5 fw-bold">
+				Hospital de Clínicas
+			</h1>
+
+			<p class="lead">
+				Portal de Administración del Sistema
+			</p>
+		</div>
+	</section>
+
+
+
+<!-- DASHBOARD -->
+	<section class="container py-5">
+		<div class="row g-4">
+
+			<div class="col-md-3">
+				<div class="card shadow text-center h-100">
+					<div class="card-body">
+
+						<h2 style="color:#6f42c1;">
+							350
+						</h2>
+
+						<h5>
+							Usuarios registrados
+						</h5>
+
+						<p class="text-muted mb-0">
+							Cuentas activas en el sistema
+						</p>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="card shadow text-center h-100">
+                    <div class="card-body">
+
+                        <h2 style="color:#6f42c1;">
+							86
+						</h2>
+
+						<h5>
+							Funcionarios activos
+						</h5>
+
+						<p class="text-muted mb-0">
+							Médicos y enfermeros registrados
+						</p>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="card shadow text-center h-100">
+                    <div class="card-body">
+
+                        <h2 style="color:#6f42c1;">
+							245
+						</h2>
+
+						<h5>
+							Documentos publicados
+						</h5>
+
+						<p class="text-muted mb-0">
+							Material institucional vigente
+						</p>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="card shadow text-center h-100">
+					<div class="card-body">
+
+                        <h2 style="color:#6f42c1;">
+							12
+						</h2>
+
+						<h5>
+							Encuestas activas
+						</h5>
+
+						<p class="text-muted mb-0">
+							Procesos de evaluación actuales
+						</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+<!-- BUSCADOR -->
+	<section class="container pb-5">
+		<div class="row">
+			<div class="col-lg-9">
+				<input type="search" class="form-control form-control-lg" placeholder="Buscar usuarios, funcionarios, documentos, encuestas o palabras clave...">
+			</div>
+
+			<div class="col-lg-3">
+				<button class="btn btn-lg w-100 text-white" style="background:#6f42c1;">
+					Buscar
+				</button>
+			</div>
+		</div>
+	</section>
+
+
+
+<!-- CONTENIDO -->
+	<section class="container pb-5">
+		<div class="row">
+
+
+	<!-- COLUMNA PRINCIPAL -->
+			<div class="col-lg-8">
+	
+		<!-- GESTIÓN DE USUARIOS -->
+				<div id="usuarios" class="card shadow mb-4">
+					<div class="card-header text-white" style="background:#6f42c1;">
+						<h3 class="mb-0">
+							Gestión de Usuarios
+						</h3>
+					</div>
+
+					<div class="card-body">
+						<p class="text-muted">
+							Administración de cuentas, roles y estados de acceso al sistema.
+						</p>
+
+						<div class="table-responsive">
+							<table class="table table-hover align-middle">
+
+								<thead style="background:#eee6ff;">
+									<tr>
+										<th>
+											Cédula
+										</th>
+
+										<th>
+											Nombre
+										</th>
+
+										<th>
+											Rol
+										</th>
+
+										<th>
+											Estado
+										</th>
+
+										<th>
+											Acción
+										</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr>
+										<td>
+											4.567.890-1
+										</td>
+
+										<td>
+											Juan Pérez
+										</td>
+
+										<td>
+											<span class="badge text-white" style="background:#198754;">
+												Médico
+											</span>
+
+										</td>
+
+										<td>
+											<span class="badge bg-success">
+												Activa
+											</span>
+
+										</td>
+
+										<td>
+											<button class="btn btn-outline-primary btn-sm">
+												Editar
+											</button>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											5.234.678-9
+										</td>
+
+										<td>
+											María González
+										</td>
+
+										<td>
+											<span class="badge text-white" style="background:#198754;">
+												Enfermero
+											</span>
+										</td>
+
+										<td>
+											<span class="badge bg-success">
+												Activa
+											</span>
+										</td>
+
+										<td>
+											<button class="btn btn-outline-primary btn-sm">
+												Editar
+											</button>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											6.789.123-4
+										</td>
+
+										<td>
+											Ana Rodríguez
+										</td>
+
+										<td>
+											<span class="badge text-white" style="background:#0d6efd;">
+												Usuario
+											</span>
+
+										</td>
+
+										<td>
+											<span class="badge bg-secondary">
+												Inactiva
+											</span>
+										</td>
+
+										<td>
+											<button class="btn btn-outline-primary btn-sm">
+												Editar
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<button class="btn text-white w-100 mt-3" style="background:#6f42c1;">
+							+ Nuevo usuario
+						</button>
+
+					</div>
+				</div>
+
+
+		<!-- GESTIÓN DE FUNCIONARIOS -->
+				<div id="funcionarios" class="card shadow mb-4">
+					<div class="card-header text-white" style="background:#6f42c1;">
+						<h3 class="mb-0">
+							Gestión de Funcionarios
+						</h3>
+					</div>
+
+					<div class="card-body">
+						<p class="text-muted">
+							Asignación de especialidades y permisos de funcionarios.
+						</p>
+
+						<div class="table-responsive">
+							<table class="table table-hover align-middle">
+
+								<thead style="background:#eee6ff;">
+									<tr>
+										<th>
+											Funcionario
+										</th>
+
+										<th>
+											Especialidad
+										</th>
+
+										<th>
+											Permisos
+										</th>
+
+										<th>
+											Acción
+										</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr>
+										<td>
+											Dr. Juan Pérez
+										</td>
+
+										<td>
+											Cardiología
+										</td>
+
+										<td>
+											<span class="badge bg-success">
+												Documentos
+											</span>
+										</td>
+
+										<td>
+											<button class="btn btn-outline-primary btn-sm">
+												Gestionar
+											</button>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											Enf. María González
+										</td>
+
+										<td>
+											Emergencia
+										</td>
+
+										<td>
+											<span class="badge bg-success">
+												Documentos
+											</span>
+										</td>
+
+										<td>
+											<button class="btn btn-outline-primary btn-sm">
+												Gestionar
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+
+		<!-- GESTIÓN DOCUMENTAL -->
+				<div id="documentos" class="card shadow mb-4">
+					<div class="card-header text-white" style="background:#6f42c1;">
+						<h3 class="mb-0">
+							Gestión Documental
+						</h3>
+					</div>
+
+					<div class="card-body">
+						<p class="text-muted">
+							Revisión y administración global de documentos institucionales.
+						</p>
+
+						<div class="table-responsive">
+							<table class="table table-hover align-middle">
+
+								<thead style="background:#eee6ff;">
+									<tr>
+										<th>
+											Documento
+										</th>
+
+										<th>
+											Autor
+										</th>
+
+										<th>
+											Especialidad
+										</th>
+
+										<th>
+											Estado
+										</th>
+
+										<th>
+											Acción
+										</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr>
+										<td>
+											Indicaciones ecocardiograma con dobutamina
+										</td>
+
+										<td>
+											Dr. Juan Pérez
+										</td>
+
+										<td>
+											Cardiología
+										</td>
+
+										<td>
+											<span class="badge bg-success">
+												Vigente
+											</span>
+										</td>
+
+										<td>
+											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+												<button class="btn btn-outline-success btn-sm">
+													Ver
+												</button>
+
+												<button class="btn btn-outline-warning btn-sm">
+													Editar
+												</button>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											Nuevo protocolo emergencia
+										</td>
+
+										<td>
+											Enf. María González
+										</td>
+
+										<td>
+											Emergencia
+										</td>
+
+										<td>
+											<span class="badge bg-warning text-dark">
+												Pendiente revisión
+											</span>
+										</td>
+
+										<td>
+											<button class="btn btn-outline-primary btn-sm">
+												Revisar
+											</button>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											Documento antiguo
+										</td>
+
+										<td>
+											Funcionario anterior
+										</td>
+
+										<td>
+											Medicina
+										</td>
+
+										<td>
+											<span class="badge bg-danger">
+												Rechazado
+											</span>
+										</td>
+
+										<td>
+											<button class="btn btn-outline-danger btn-sm">
+												Ver motivo
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+
+		<!-- GESTIÓN DE ENCUESTAS -->
+				<div id="encuestas" class="card shadow mb-4">
+					<div class="card-header text-white" style="background:#6f42c1;">
+						<h3 class="mb-0">
+							Gestión de Encuestas
+						</h3>
+					</div>
+
+					<div class="card-body">
+						<p class="text-muted">
+							Creación, modificación y análisis de encuestas institucionales.
+						</p>
+
+						<div class="d-flex justify-content-between mb-3">
+							<button class="btn text-white" style="background:#6f42c1;">
+								+ Crear encuesta
+							</button>
+
+							<button class="btn btn-outline-secondary">
+								Exportar resultados
+							</button>
+						</div>
+
+						<div class="table-responsive">
+							<table class="table table-hover align-middle">
+
+								<thead style="background:#eee6ff;">
+									<tr>
+										<th>
+											Encuesta
+										</th>
+
+										<th>
+											Dirigida a
+										</th>
+
+										<th>
+											Estado
+										</th>
+
+										<th>
+											Respuestas
+										</th>
+
+										<th>
+											Acción
+										</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr>
+										<td>
+											Satisfacción atención en Emergencia
+										</td>
+
+										<td>
+											Pacientes
+										</td>
+
+										<td>
+											<span class="badge bg-success">
+												Activa
+											</span>
+										</td>
+
+										<td>
+											243
+										</td>
+
+										<td>
+											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+												<button class="btn btn-outline-success btn-sm">
+													Resultados
+												</button>
+
+												<button class="btn btn-outline-warning btn-sm">
+													Editar
+												</button>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											Evaluación de documentación entregada
+										</td>
+
+										<td>
+											Pacientes
+										</td>
+
+										<td>
+											<span class="badge bg-success">
+												Activa
+											</span>
+										</td>
+
+										<td>
+											87
+										</td>
+
+										<td>
+											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+												<button class="btn btn-outline-success btn-sm">
+													Resultados
+												</button>
+
+												<button class="btn btn-outline-warning btn-sm">
+													Editar
+												</button>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											Evaluación interna del servicio
+										</td>
+
+										<td>
+											Funcionarios
+										</td>
+
+										<td>
+											<span class="badge bg-secondary">
+												Cerrada
+											</span>
+										</td>
+
+										<td>
+											54
+										</td>
+
+										<td>
+											<button class="btn btn-outline-success btn-sm">
+												Resultados
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+	<!-- PANEL LATERAL -->
+			<div class="col-lg-4">
+				
+		<!-- SESIÓN -->
+				<div class="card shadow mb-4">
+					<div class="card-header text-white" style="background:#6f42c1;">
+						<h5 class="mb-0">
+							Mi sesión
+						</h5>
+					</div>
+
+					<div class="card-body">
+						<p>
+							<strong>
+								Nombre:
+							</strong><br>
+							Anna Santos
+						</p>
+
+						<p>
+							<strong>
+								Rol:
+							</strong><br>
+							Administrador
+						</p>
+
+						<p>
+							<strong>
+								Última actualización del sistema:
+							</strong><br>
+							08/07
+						</p>
+
+						<p>
+							<strong>
+								Último acceso:
+							</strong><br>
+							08/07/2026 - 14:32
+						</p>
+
+						<p class="mb-0">
+							<strong>
+								Estado de la cuenta:
+							</strong><br>
+
+							<span class="badge bg-success">
+								Activa
+							</span>
+						</p>
+					</div>
+				</div>
+
+
+		<!-- ACCESO RÁPIDO -->
+				<div class="card shadow mb-4">
+					<div class="card-header text-white" style="background:#6f42c1;">
+						<h5 class="mb-0">
+							Acceso rápido
+						</h5>
+					</div>
+
+					<div class="card-body">
+						<div class="d-grid gap-2">
+							<button class="btn btn-outline-primary">
+								Crear usuario
+							</button>
+
+							<button class="btn btn-outline-primary">
+								Gestionar funcionarios
+							</button>
+
+							<button class="btn btn-outline-primary">
+								Crear encuesta
+							</button>
+
+							<button class="btn btn-outline-primary">
+								Ver auditoría
+							</button>
+						</div>
+					</div>
+				</div>
+
+	
+		<!-- INFORMACIÓN -->
+				<div class="card shadow mb-4">
+					<div class="card-header text-white" style="background:#6f42c1;">
+						<h5 class="mb-0">
+							Información del sistema
+						</h5>
+					</div>
+
+					<div class="card-body">
+						<p>
+							Este portal permite la administración global del Sistema de Gestión Documental y Encuestas del Hospital de Clínicas.
+						</p>
+						<p class="mb-0">
+							Los administradores pueden gestionar usuarios, funcionarios, permisos, documentos y encuestas institucionales.
+						</p>
+					</div>
+				</div>
+
+
+		<!-- SOPORTE -->
+				<div class="card shadow">
+					<div class="card-header text-white" style="background:#6f42c1;">
+						<h5 class="mb-0">
+							Soporte técnico
+						</h5>
+					</div>
+
+					<div class="card-body">
+						<p>
+							Ante problemas técnicos o administrativos, comunicarse con el Departamento de Informática del Hospital de Clínicas.
+						</p>
+
+						<button class="btn w-100 text-white" style="background:#6f42c1;">
+							Contactar soporte
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+<!-- FAQ -->
+    <section id="faq" class="container pb-5">
+	    <div class="card shadow">
+		    <div class="card-header text-white" style="background:#6f42c1;">
+			    <h3 class="mb-0">
+				    Preguntas Frecuentes
+    			</h3>
+	    	</div>
+
+		    <div class="card-body">
+			    <div class="accordion">
+
+				    <div class="accordion-item">
+					    <h2 class="accordion-header">
+						    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">
+							    ¿Quién puede acceder al portal de administración?
+    						</button>
+	    				</h2>
+
+		    			<div id="faq1" class="accordion-collapse collapse show">
+			    			<div class="accordion-body">
+				    			El acceso está limitado exclusivamente a usuarios con rol Administrador, quienes cuentan con permisos para gestionar usuarios, funcionarios, documentos y encuestas.
+					    	</div>
+    					</div>
+	    			</div>
+
+		    		<div class="accordion-item">
+			    		<h2 class="accordion-header">
+				    		<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
+					    		¿Puede un funcionario crear encuestas?
+						    </button>
+	    				</h2>
+
+		    			<div id="faq2" class="accordion-collapse collapse">
+			    			<div class="accordion-body">
+				    			No. La creación, modificación y eliminación de encuestas institucionales corresponde exclusivamente a usuarios con rol Administrador.
+					    	</div>
+    					</div>
+	    			</div>
+
+		    		<div class="accordion-item">
+			    		<h2 class="accordion-header">
+				    		<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
+					    		¿Puede un administrador modificar documentos publicados?
+						    </button>
+    					</h2>
+
+	    				<div id="faq3" class="accordion-collapse collapse">
+		    				<div class="accordion-body">
+			    				Sí. El administrador puede supervisar, revisar y gestionar documentos institucionales manteniendo el historial de cambios y la trazabilidad.
+				    		</div>
+					    </div>
+    				</div>
+
+	    			<div class="accordion-item">
+		    			<h2 class="accordion-header">
+			    			<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
+				    			¿Cómo se gestionan los permisos de los usuarios?
+
+					    	</button>
+    					</h2>
+
+	    				<div id="faq4" class="accordion-collapse collapse">
+		    				<div class="accordion-body">
+			    				Los permisos se asignan mediante los roles definidos en el sistema. Cada rol determina qué acciones puede realizar cada usuario.
+				    		</div>
+					    </div>
+    				</div>
+
+	    			<div class="accordion-item">
+		    			<h2 class="accordion-header">
+			    			<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">
+				    			¿Existe un registro de modificaciones realizadas?
+					    	</button>
+    					</h2>
+
+	    				<div id="faq5" class="accordion-collapse collapse">
+		    				<div class="accordion-body">
+			    				Sí. El sistema registra las acciones realizadas por los usuarios administrativos para garantizar seguridad, control y auditoría.
+				    		</div>
+					    </div>
+    				</div>
+
+	    			<div class="accordion-item">
+		    			<h2 class="accordion-header">
+			    			<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq6">
+				    			¿Qué sucede cuando un funcionario deja de trabajar en el hospital?
+					    	</button>
+	    				</h2>
+
+		    			<div id="faq6" class="accordion-collapse collapse">
+			    			<div class="accordion-body">
+				    			El administrador puede modificar el estado de la cuenta, retirar permisos o desactivar el acceso manteniendo los registros históricos.
+					    	</div>
+	    				</div>
+		    		</div>
+			    </div>
+    		</div>
+	    </div>
+    </section>
+
+
+
+<!-- FOOTER -->
+    <footer class="text-center py-4 mt-5">
+        <h5>
+            Hospital de Clínicas
+        </h5>
+
+        <p class="mb-1">
+            Sistema de Gestión Documental y Encuestas
+        </p>
+
+        <p class="mb-1">
+            UTU Arroyo Seco
+        </p>
+
+        <p class="mb-1">
+            Proyecto Integrador
+        </p>
+
+        <p class="mb-0">
+            Nordlyn © 2026
+        </p>
+    </footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

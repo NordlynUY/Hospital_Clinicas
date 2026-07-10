@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Hospital de Clínicas | Portal del Personal de Salud</title>
+
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+		rel="stylesheet">
+
+	<style>
+
+		body{
+			background:#f8f9fa;
+		}
+
+		.hero{
+			background:linear-gradient(135deg,#198754,#146c43);
+			color:white;
+			padding:60px 20px;
+			text-align:center;
+		}
+
+		.card{
+			border:none;
+		}
+
+		.card:hover{
+			transform:translateY(-3px);
+			transition:.3s;
+		}
+
+		footer{
+			background:#198754;
+			color:white;
+		}
+
+		.accordion-button:not(.collapsed){
+			background:#e8f5ee;
+			color:#198754;
+		}
+
+	</style>
+</head>
+
+
+
+<body>
+<!-- NAVBAR -->
+	<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+		<div class="container">
+			<a class="navbar-brand fw-bold text-success" href="#">
+				Hospital de Clínicas
+			</a>
+
+			<button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="menu">
+				<ul class="navbar-nav ms-auto">
+
+					<li class="nav-item">
+						<a class="nav-link active" href="#">
+							Inicio
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#documentos">
+							Documentos
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#especialidades">
+							Especialidades
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#encuestas">
+							Encuestas
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#faq">
+							FAQ
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link text-danger" href="#">
+							Cerrar sesión
+						</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+
+<!-- HERO -->
+	<section class="hero">
+		<div class="container">
+			<h1 class="display-5 fw-bold">
+				Hospital de Clínicas
+			</h1>
+
+			<p class="lead">
+				Portal del Personal de Salud
+			</p>
+		</div>
+	</section>
+
+
+
+<!-- DASHBOARD -->
+	<section class="container py-5">
+		<div class="row g-4">
+
+			<div class="col-md-3">
+				<div class="card shadow text-center h-100">
+					<div class="card-body">
+						
+						<h2 class="text-success">
+							128
+						</h2>
+
+						<h5>
+							Documentos publicados
+						</h5>
+
+						<p class="text-muted mb-0">
+							Material educativo disponible
+						
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="card shadow text-center h-100">
+					<div class="card-body">
+
+						<h2 class="text-success">
+							5
+						</h2>
+
+						<h5>
+							Pendientes
+						</h5>
+
+						<p class="text-muted mb-0">
+							Documentos esperando revisión
+						</p>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="card shadow text-center h-100">
+					<div class="card-body">
+
+						<h2 class="text-success">
+							3
+						</h2>
+
+						<h5>
+							Encuestas activas
+						</h5>
+
+						<p class="text-muted mb-0">
+							Procesos de evaluación abiertos
+						</p>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="card shadow text-center h-100">
+					<div class="card-body">
+
+						<h2 class="text-success">
+							08/07
+						</h2>
+
+						<h5>
+							Última actualización
+						</h5>
+
+						<p class="text-muted mb-0">
+							Documentación vigente
+						</p>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+
+
+<!-- BUSCADOR -->
+	<section class="container pb-5">
+		<div class="row">
+			<div class="col-lg-9">
+				<input type="search" class="form-control form-control-lg" placeholder="Buscar documentos, especialidades, encuestas o palabras clave...">
+			</div>
+
+			<div class="col-lg-3">
+				<button class="btn btn-success btn-lg w-100">
+					Buscar
+				</button>
+			</div>
+		</div>
+	</section>
+
+
+
+<!-- CONTENIDO -->
+	<section class="container pb-5">
+		<div class="row">
+
+
+	<!-- COLUMNA PRINCIPAL -->
+			<div class="col-lg-8">
+
+		<!-- GESTIÓN DOCUMENTAL -->
+				<div id="documentos" class="card shadow mb-4">
+					<div class="card-header bg-success text-white">
+						<h3 class="mb-0">
+							Gestión Documental
+						</h3>
+					</div>
+
+					<div class="card-body">
+						<p class="text-muted">
+							Administración de documentos institucionales publicados por funcionarios autorizados.
+						</p>
+
+						<div class="table-responsive">
+							<table class="table table-hover align-middle">
+
+								<thead class="table-success">
+									<tr>
+										<th>
+											Documento
+										</th>
+
+										<th>
+											Especialidad
+										</th>
+
+										<th>
+											Estado
+										</th>
+
+										<th>
+											Acción
+										</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr>
+										<td>
+											Indicaciones ecocardiograma con dobutamina
+										</td>
+
+										<td>
+											Cardiología
+										</td>
+
+										<td>
+											<span class="badge bg-success">
+												Vigente
+											</span>
+										</td>
+
+										<td>
+											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+												<button class="btn btn-outline-success btn-sm">
+													Ver
+												</button>
+
+												<button class="btn btn-outline-warning btn-sm">
+													Editar
+												</button>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											Pauta para pacientes ostomizados
+										</td>
+
+										<td>
+											Gastroenterología
+										</td>
+
+										<td>
+											<span class="badge bg-success">
+												Vigente
+											</span>
+										</td>
+
+										<td>
+											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+												<button class="btn btn-outline-success btn-sm">
+													Ver
+												</button>
+
+												<button class="btn btn-outline-warning btn-sm">
+													Editar
+												</button>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											Preparación para estudios imagenológicos
+										</td>
+
+										<td>
+											Imagenología
+										</td>
+
+										<td>
+											<span class="badge bg-warning text-dark">
+												En revisión
+											</span>
+										</td>
+
+										<td>
+											<button class="btn btn-outline-primary btn-sm">
+												Revisar
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<button class="btn btn-success w-100 mt-3">
+							+ Nuevo documento
+						</button>
+
+					</div>
+				</div>
+
+
+		<!-- MIS ESPECIALIDADES -->
+				<div id="especialidades" class="card shadow mb-4">
+					<div class="card-header bg-success text-white">
+						<h3 class="mb-0">
+							Mis Especialidades
+						</h3>
+					</div>
+
+					<div class="card-body">
+						<div class="accordion" id="especialidadesFuncionario">
+
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#cardiologiaFuncionario">
+										Cardiología
+									</button>
+								</h2>
+
+								<div id="cardiologiaFuncionario" class="accordion-collapse collapse show">
+									<div class="accordion-body">
+										<ul class="list-group">
+
+											<li class="list-group-item d-flex justify-content-between">
+												Documentos publicados
+												<span class="badge bg-success">
+													24
+												</span>
+											</li>
+
+											<li class="list-group-item">
+												<button class="btn btn-outline-success btn-sm">
+													Crear nuevo documento
+												</button>
+											</li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#emergenciaFuncionario">
+										Emergencia
+									</button>
+								</h2>
+
+								<div id="emergenciaFuncionario" class="accordion-collapse collapse">
+									<div class="accordion-body">
+										<ul class="list-group">
+
+											<li class="list-group-item d-flex justify-content-between">
+												Documentos publicados
+												<span class="badge bg-success">
+													15
+												</span>
+											</li>
+
+											<li class="list-group-item">
+												<button class="btn btn-outline-success btn-sm">
+													Crear nuevo documento
+												</button>
+											</li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+		<!-- ENCUESTAS -->
+				<div id="encuestas" class="card shadow mb-4">
+					<div class="card-header bg-success text-white">
+						<h3 class="mb-0">
+							Encuestas institucionales disponibles
+						</h3>
+					</div>
+
+					<div class="card-body">
+						<div class="list-group">
+
+							<div class="list-group-item d-flex justify-content-between align-items-center">
+								<div>
+									<strong>
+										Satisfacción atención en Emergencia
+									</strong><br>
+
+									<small class="text-muted">
+										Encuesta disponible para pacientes
+									</small>
+								</div>
+
+								<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+    								<span class="badge bg-success">
+										243 respuestas
+									</span>
+
+    								<button class="btn btn-outline-success btn-sm">
+										Resultados
+									</button>
+								</div>
+							</div>
+
+							<div class="list-group-item d-flex justify-content-between align-items-center">
+								<div>
+									<strong>
+										Evaluación de documentación entregada
+									</strong><br>
+
+									<small class="text-muted">
+										Control de calidad institucional
+									</small>
+								</div>
+
+								<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+									<span class="badge bg-success me-2">
+										87 respuestas
+									</span>
+
+									<button class="btn btn-outline-success btn-sm">
+										Resultados
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			
+	<!-- PANEL LATERAL -->
+			<div class="col-lg-4">
+
+		<!-- SESIÓN -->
+				<div class="card shadow mb-4">
+					<div class="card-header bg-success text-white">
+						<h5 class="mb-0">
+							Mi sesión
+						</h5>
+					</div>
+
+					<div class="card-body">
+						<p>
+							<strong>
+								Nombre:
+							</strong><br>
+							Dr. Juan Pérez
+						</p>
+
+						<p>
+							<strong>
+								Rol:
+							</strong><br>
+							Médico
+						</p>
+
+						<p>
+							<strong>
+								Especialidad:
+							</strong><br>
+							Cardiología
+						</p>
+
+						<p>
+							<strong>
+								Último acceso:
+							</strong><br>
+							08/07/2026 - 14:32
+						</p>
+
+						<p class="mb-0">
+							<strong>
+								Estado de la cuenta:
+							</strong><br>
+							<span class="badge bg-success">
+								Activa
+							</span>
+						</p>
+
+					</div>
+				</div>
+
+
+		<!-- ACCESO RÁPIDO -->
+				<div class="card shadow mb-4">
+					<div class="card-header bg-success text-white">
+						<h5 class="mb-0">
+							Acceso rápido
+						</h5>
+					</div>
+
+					<div class="card-body">
+						<div class="d-grid gap-2">
+							<button class="btn btn-outline-success">
+								Nuevo documento
+							</button>
+
+							<button class="btn btn-outline-success">
+								Gestionar documentos
+							</button>
+
+							<button class="btn btn-outline-success">
+								Ver respuestas
+							</button>
+						</div>
+					</div>
+				</div>
+
+
+		<!-- INFORMACIÓN -->
+				<div class="card shadow mb-4">
+					<div class="card-header bg-success text-white">
+						<h5 class="mb-0">
+							Información del sistema
+						</h5>
+					</div>
+
+					<div class="card-body">
+						<p>
+							Este portal permite al personal autorizado gestionar documentación institucional y administrar encuestas del Hospital de Clínicas.
+						</p>
+
+						<p class="mb-0">
+							Toda modificación realizada queda registrada para garantizar la trazabilidad de los documentos publicados.
+						</p>
+					</div>
+				</div>
+
+
+		<!-- SOPORTE -->
+				<div class="card shadow">
+					<div class="card-header bg-success text-white">
+						<h5 class="mb-0">
+							Soporte técnico
+						</h5>
+					</div>
+
+					<div class="card-body">
+						<p>
+							Ante problemas con el sistema, comunicarse con el Departamento de Informática del Hospital de Clínicas.
+						</p>
+
+						<button class="btn btn-success w-100">
+							Contactar soporte
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+<!-- FAQ -->
+    <section id="faq" class="container pb-5">
+	    <div class="card shadow">
+		    <div class="card-header bg-success text-white">
+			    <h3 class="mb-0">
+				    Preguntas Frecuentes
+    			</h3>
+	    	</div>
+
+		    <div class="card-body">
+			    <div class="accordion">
+				
+                    <div class="accordion-item">
+					    <h2 class="accordion-header">
+						    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">
+							    ¿Cómo publicar un documento?
+						    </button>
+					    </h2>
+
+    					<div id="faq1" class="accordion-collapse collapse show">
+	    					<div class="accordion-body">
+		    					Los funcionarios autorizados pueden crear un documento, asociarlo a una especialidad médica y enviarlo para revisión antes de su publicación.
+			    			</div>
+				    	</div>
+				    </div>
+
+    				<div class="accordion-item">
+	    				<h2 class="accordion-header">
+		    				<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
+			    				¿Quién puede modificar documentos?
+				    		</button>
+					    </h2>
+
+    					<div id="faq2" class="accordion-collapse collapse">
+	    					<div class="accordion-body">
+		    					Solo los funcionarios autorizados pueden modificar documentación institucional correspondiente a sus áreas asignadas.
+			    			</div>
+				    	</div>
+				    </div>
+
+    				<div class="accordion-item">
+	    				<h2 class="accordion-header">
+		    				<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
+			    				¿Qué ocurre con las versiones anteriores?
+				    		</button>
+					    </h2>
+
+    					<div id="faq3" class="accordion-collapse collapse">
+	    					<div class="accordion-body">
+		    					Las versiones anteriores permanecen registradas en el sistema para mantener un historial de cambios y garantizar trazabilidad.
+			    			</div>
+				    	</div>
+				    </div>
+
+    				<div class="accordion-item">
+	    				<h2 class="accordion-header">
+		    				<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
+			    				¿Quién puede crear y modificar encuestas?
+				    		</button>
+					    </h2>
+
+    					<div id="faq4" class="accordion-collapse collapse">
+	    					<div class="accordion-body">
+		    					La creación y gestión de encuestas corresponde exclusivamente a usuarios con rol Administrador.
+			    			</div>
+				    	</div>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+    </section>
+
+
+
+<!-- FOOTER -->
+    <footer class="text-center py-4 mt-5">
+        <h5>
+            Hospital de Clínicas
+        </h5>
+
+        <p class="mb-1">
+            Sistema de Gestión Documental y Encuestas
+        </p>
+
+        <p class="mb-1">
+            UTU Arroyo Seco
+        </p>
+
+        <p class="mb-1">
+            Proyecto Integrador
+        </p>
+
+        <p class="mb-0">
+            Nordlyn © 2026
+        </p>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
