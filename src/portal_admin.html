@@ -8,9 +8,7 @@
 
 	<title>Hospital de Clínicas | Portal Administrador</title>
 
-	<link
-		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-		rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
 	<style>
 
@@ -51,7 +49,7 @@
 
 <body>
 <!-- NAVBAR -->
-	<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+	<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
 		<div class="container">
 			<a class="navbar-brand fw-bold text-purple" href="#" style="color:#6f42c1;">
 				Hospital de Clínicas
@@ -65,20 +63,8 @@
 				<ul class="navbar-nav ms-auto">
 
 					<li class="nav-item">
-						<a class="nav-link active" href="#">
-							Inicio
-						</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="#usuarios">
-							Usuarios
-						</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="#funcionarios">
-							Funcionarios
+						<a class="nav-link" href="#personal">
+							Personal
 						</a>
 					</li>
 
@@ -93,6 +79,30 @@
 							Encuestas
 						</a>
 					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#sesion">
+							Mi Sesion
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#accesoRapido">
+							Acceso Rápido
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#informacion">
+							Informacion
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#ayuda">
+							Ayuda
+						</a>
+					</li>
 					
 					<li class="nav-item">
 						<a class="nav-link" href="#faq">
@@ -101,7 +111,7 @@
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link text-danger" href="#">
+						<a class="nav-link text-danger" href="index.html">
 							Cerrar sesión
 						</a>
 					</li>
@@ -131,26 +141,6 @@
 <!-- DASHBOARD -->
 	<section class="container py-5">
 		<div class="row g-4">
-
-			<div class="col-md-3">
-				<div class="card shadow text-center h-100">
-					<div class="card-body">
-
-						<h2 style="color:#6f42c1;">
-							350
-						</h2>
-
-						<h5>
-							Usuarios registrados
-						</h5>
-
-						<p class="text-muted mb-0">
-							Cuentas activas en el sistema
-						</p>
-
-					</div>
-				</div>
-			</div>
 
 			<div class="col-md-3">
 				<div class="card shadow text-center h-100">
@@ -211,6 +201,26 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="col-md-3">
+				<div class="card shadow text-center h-100">
+					<div class="card-body">
+
+						<h2 style="color:#6f42c1;">
+							08/07
+						</h2>
+
+						<h5>
+							Última actualización
+						</h5>
+
+						<p class="text-muted mb-0">
+							Documentación vigente
+						</p>
+
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -241,23 +251,29 @@
 	<!-- COLUMNA PRINCIPAL -->
 			<div class="col-lg-8">
 	
-		<!-- GESTIÓN DE USUARIOS -->
-				<div id="usuarios" class="card shadow mb-4">
+		<!-- GESTIÓN DEL PERSONAL -->
+				<div id="personal" class="card shadow mb-4">
 					<div class="card-header text-white" style="background:#6f42c1;">
 						<h3 class="mb-0">
-							Gestión de Usuarios
+							Gestión del Personal
 						</h3>
 					</div>
 
 					<div class="card-body">
 						<p class="text-muted">
-							Administración de cuentas, roles y estados de acceso al sistema.
+							Administración de cuentas del personal, roles, especialidades y estados de acceso al sistema.
 						</p>
+
+						<div class="d-grid mb-3">
+							<button class="btn text-white" style="background:#6f42c1;">
+								+ Nuevo funcionario
+							</button>
+						</div>
 
 						<div class="table-responsive">
 							<table class="table table-hover align-middle">
 
-								<thead style="background:#eee6ff;">
+								<thead>
 									<tr>
 										<th>
 											Cédula
@@ -272,11 +288,15 @@
 										</th>
 
 										<th>
+											Especialidad
+										</th>
+
+										<th>
 											Estado
 										</th>
 
 										<th>
-											Acción
+											Acciones
 										</th>
 									</tr>
 								</thead>
@@ -288,27 +308,31 @@
 										</td>
 
 										<td>
-											Juan Pérez
+											Dr. Juan Pérez
 										</td>
 
 										<td>
 											<span class="badge text-white" style="background:#198754;">
 												Médico
 											</span>
+										</td>
 
+										<td>
+											Cardiología
 										</td>
 
 										<td>
 											<span class="badge bg-success">
 												Activa
 											</span>
-
 										</td>
 
 										<td>
-											<button class="btn btn-outline-primary btn-sm">
-												Editar
-											</button>
+											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+												<button class="btn btn-outline-primary">
+													Editar
+												</button>
+											</div>
 										</td>
 									</tr>
 
@@ -323,8 +347,12 @@
 
 										<td>
 											<span class="badge text-white" style="background:#198754;">
-												Enfermero
+												Enfermera
 											</span>
+										</td>
+
+										<td>
+											Emergencia
 										</td>
 
 										<td>
@@ -334,15 +362,51 @@
 										</td>
 
 										<td>
-											<button class="btn btn-outline-primary btn-sm">
-												Editar
-											</button>
+											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+												<button class="btn btn-outline-primary">
+													Editar
+												</button>
+											</div>
 										</td>
 									</tr>
 
 									<tr>
 										<td>
-											6.789.123-4
+											3.456.789-0
+										</td>
+
+										<td>
+											Laura Fernández
+										</td>
+
+										<td>
+											<span class="badge text-white" style="background:#dc3545;">
+												Administrador
+											</span>
+										</td>
+
+										<td>
+											—
+										</td>
+
+										<td>
+											<span class="badge bg-success">
+												Activa
+											</span>
+										</td>
+
+										<td>
+											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+												<button class="btn btn-outline-primary">
+													Editar
+												</button>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											7.890.456-2
 										</td>
 
 										<td>
@@ -350,114 +414,27 @@
 										</td>
 
 										<td>
-											<span class="badge text-white" style="background:#0d6efd;">
-												Usuario
+											<span class="badge text-white" style="background:#198754;">
+												Enfermera
 											</span>
-
 										</td>
 
 										<td>
-											<span class="badge bg-secondary">
+											Pediatría
+										</td>
+
+										<td>
+											<span class="badge bg-warning">
 												Inactiva
 											</span>
 										</td>
 
 										<td>
-											<button class="btn btn-outline-primary btn-sm">
-												Editar
-											</button>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-
-						<button class="btn text-white w-100 mt-3" style="background:#6f42c1;">
-							+ Nuevo usuario
-						</button>
-
-					</div>
-				</div>
-
-
-		<!-- GESTIÓN DE FUNCIONARIOS -->
-				<div id="funcionarios" class="card shadow mb-4">
-					<div class="card-header text-white" style="background:#6f42c1;">
-						<h3 class="mb-0">
-							Gestión de Funcionarios
-						</h3>
-					</div>
-
-					<div class="card-body">
-						<p class="text-muted">
-							Asignación de especialidades y permisos de funcionarios.
-						</p>
-
-						<div class="table-responsive">
-							<table class="table table-hover align-middle">
-
-								<thead style="background:#eee6ff;">
-									<tr>
-										<th>
-											Funcionario
-										</th>
-
-										<th>
-											Especialidad
-										</th>
-
-										<th>
-											Permisos
-										</th>
-
-										<th>
-											Acción
-										</th>
-									</tr>
-								</thead>
-
-								<tbody>
-									<tr>
-										<td>
-											Dr. Juan Pérez
-										</td>
-
-										<td>
-											Cardiología
-										</td>
-
-										<td>
-											<span class="badge bg-success">
-												Documentos
-											</span>
-										</td>
-
-										<td>
-											<button class="btn btn-outline-primary btn-sm">
-												Gestionar
-											</button>
-										</td>
-									</tr>
-
-									<tr>
-										<td>
-											Enf. María González
-										</td>
-
-										<td>
-											Emergencia
-										</td>
-
-										<td>
-											<span class="badge bg-success">
-												Documentos
-											</span>
-										</td>
-
-										<td>
-											<button class="btn btn-outline-primary btn-sm">
-												Gestionar
-											</button>
+											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+												<button class="btn btn-outline-warning">
+													Editar
+												</button>
+											</div>
 										</td>
 									</tr>
 								</tbody>
@@ -477,8 +454,14 @@
 
 					<div class="card-body">
 						<p class="text-muted">
-							Revisión y administración global de documentos institucionales.
+							Revisión y administración global de documentos institucionales publicados por funcionarios autorizados.
 						</p>
+
+						<div class="d-grid mb-3">
+							<button class="btn text-white" style="background:#6f42c1;">
+								+ Nuevo documento
+							</button>
+						</div>
 
 						<div class="table-responsive">
 							<table class="table table-hover align-middle">
@@ -502,7 +485,7 @@
 										</th>
 
 										<th>
-											Acción
+											Acciones
 										</th>
 									</tr>
 								</thead>
@@ -529,11 +512,11 @@
 
 										<td>
 											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
-												<button class="btn btn-outline-success btn-sm">
+												<button class="btn btn-outline-success">
 													Ver
 												</button>
 
-												<button class="btn btn-outline-warning btn-sm">
+												<button class="btn btn-outline-primary">
 													Editar
 												</button>
 											</div>
@@ -554,15 +537,17 @@
 										</td>
 
 										<td>
-											<span class="badge bg-warning text-dark">
-												Pendiente revisión
+											<span class="badge bg-warning text-dark text-center">
+												Pendiente<br>revisión
 											</span>
 										</td>
 
 										<td>
-											<button class="btn btn-outline-primary btn-sm">
-												Revisar
-											</button>
+											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+												<button class="btn btn-outline-warning">
+													Revisar
+												</button>
+											</div>
 										</td>
 									</tr>
 
@@ -586,9 +571,11 @@
 										</td>
 
 										<td>
-											<button class="btn btn-outline-danger btn-sm">
-												Ver motivo
-											</button>
+											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+												<button class="btn btn-outline-danger">
+													Ver motivo
+												</button>
+											</div>
 										</td>
 									</tr>
 								</tbody>
@@ -612,7 +599,7 @@
 						</p>
 
 						<div class="d-flex justify-content-between mb-3">
-							<button class="btn text-white" style="background:#6f42c1;">
+							<button class="btn text-white flex-grow-1 me-3" style="background:#6f42c1;">
 								+ Crear encuesta
 							</button>
 
@@ -635,20 +622,52 @@
 										</th>
 
 										<th>
-											Estado
-										</th>
-
-										<th>
 											Respuestas
 										</th>
 
 										<th>
-											Acción
+											Estado
+										</th>
+
+										<th>
+											Acciones
 										</th>
 									</tr>
 								</thead>
 
 								<tbody>
+									<tr>
+										<td>
+											Evaluación interna del servicio
+										</td>
+
+										<td>
+											Funcionarios
+										</td>
+
+										<td>
+											54
+										</td>
+										
+										<td>
+											<span class="badge bg-success">
+												Activa
+											</span>
+										</td>
+
+										<td>
+											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+												<button class="btn btn-outline-success">
+													Resultados
+												</button>
+
+												<button class="btn btn-outline-warning">
+													Editar
+												</button>
+											</div>
+										</td>
+									</tr>
+									
 									<tr>
 										<td>
 											Satisfacción atención en Emergencia
@@ -659,22 +678,22 @@
 										</td>
 
 										<td>
+											243
+										</td>
+										
+										<td>
 											<span class="badge bg-success">
 												Activa
 											</span>
 										</td>
 
 										<td>
-											243
-										</td>
-
-										<td>
 											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
-												<button class="btn btn-outline-success btn-sm">
+												<button class="btn btn-outline-success">
 													Resultados
 												</button>
 
-												<button class="btn btn-outline-warning btn-sm">
+												<button class="btn btn-outline-warning">
 													Editar
 												</button>
 											</div>
@@ -691,37 +710,9 @@
 										</td>
 
 										<td>
-											<span class="badge bg-success">
-												Activa
-											</span>
-										</td>
-
-										<td>
 											87
 										</td>
-
-										<td>
-											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
-												<button class="btn btn-outline-success btn-sm">
-													Resultados
-												</button>
-
-												<button class="btn btn-outline-warning btn-sm">
-													Editar
-												</button>
-											</div>
-										</td>
-									</tr>
-
-									<tr>
-										<td>
-											Evaluación interna del servicio
-										</td>
-
-										<td>
-											Funcionarios
-										</td>
-
+										
 										<td>
 											<span class="badge bg-secondary">
 												Cerrada
@@ -729,13 +720,11 @@
 										</td>
 
 										<td>
-											54
-										</td>
-
-										<td>
-											<button class="btn btn-outline-success btn-sm">
-												Resultados
-											</button>
+											<div class="d-flex flex-column flex-sm-row gap-2 align-items-start align-items-sm-center">
+												<button class="btn btn-outline-success">
+													Resultados
+												</button>
+											</div>
 										</td>
 									</tr>
 								</tbody>
@@ -751,7 +740,7 @@
 			<div class="col-lg-4">
 				
 		<!-- SESIÓN -->
-				<div class="card shadow mb-4">
+				<div id="sesion" class="card shadow mb-4">
 					<div class="card-header text-white" style="background:#6f42c1;">
 						<h5 class="mb-0">
 							Mi sesión
@@ -775,33 +764,16 @@
 
 						<p>
 							<strong>
-								Última actualización del sistema:
-							</strong><br>
-							08/07
-						</p>
-
-						<p>
-							<strong>
 								Último acceso:
 							</strong><br>
 							08/07/2026 - 14:32
-						</p>
-
-						<p class="mb-0">
-							<strong>
-								Estado de la cuenta:
-							</strong><br>
-
-							<span class="badge bg-success">
-								Activa
-							</span>
 						</p>
 					</div>
 				</div>
 
 
 		<!-- ACCESO RÁPIDO -->
-				<div class="card shadow mb-4">
+				<div id="accesoRapido" class="card shadow mb-4">
 					<div class="card-header text-white" style="background:#6f42c1;">
 						<h5 class="mb-0">
 							Acceso rápido
@@ -811,15 +783,15 @@
 					<div class="card-body">
 						<div class="d-grid gap-2">
 							<button class="btn btn-outline-primary">
-								Crear usuario
+								Nuevo funcionario
 							</button>
 
 							<button class="btn btn-outline-primary">
-								Gestionar funcionarios
+								Nuevo documento
 							</button>
 
 							<button class="btn btn-outline-primary">
-								Crear encuesta
+								Nueva encuesta
 							</button>
 
 							<button class="btn btn-outline-primary">
@@ -831,7 +803,7 @@
 
 	
 		<!-- INFORMACIÓN -->
-				<div class="card shadow mb-4">
+				<div id="informacion" class="card shadow mb-4">
 					<div class="card-header text-white" style="background:#6f42c1;">
 						<h5 class="mb-0">
 							Información del sistema
@@ -850,7 +822,7 @@
 
 
 		<!-- SOPORTE -->
-				<div class="card shadow">
+				<div id="ayuda" class="card shadow">
 					<div class="card-header text-white" style="background:#6f42c1;">
 						<h5 class="mb-0">
 							Soporte técnico
