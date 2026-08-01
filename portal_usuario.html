@@ -1,0 +1,1232 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Hospital de Clínicas | Portal del Usuario</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<style>
+
+		body{
+			background:#f8f9fa;
+		}
+
+		.hero{
+			background:linear-gradient(135deg,#0d6efd,#0a58ca);
+			color:white;
+			padding:60px 20px;
+			text-align:center;
+		}
+
+		.card{
+			border:none;
+		}
+
+		.card:hover{
+			transform:translateY(-3px);
+			transition:.3s;
+		}
+
+		footer{
+			background:#0d6efd;
+			color:white;
+		}
+
+		.accordion-button:not(.collapsed){
+			background:#e9f2ff;
+			color:#0d6efd;
+		}
+
+	</style>
+</head>
+
+
+
+<body>
+<!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+		<div class="container">
+			<a class="navbar-brand fw-bold text-primary" href="#">
+				Hospital de Clínicas
+			</a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="menu">
+				<ul class="navbar-nav ms-auto">
+
+					<li class="nav-item">
+						<a class="nav-link" href="#documentos">
+							Documentación
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#accesoRapido">
+							Acceso Rápido
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#informacion">
+							Información
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#ayuda">
+							Ayuda
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#faq">
+							FAQ
+						</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+
+<!-- HERO -->
+	<section class="hero">
+		<div class="container">
+			<h1 class="display-5 fw-bold">
+				Hospital de Clínicas
+			</h1>
+
+			<p class="lead">
+				Portal de Documentación para Usuarios
+			</p>
+		</div>
+	</section>
+
+
+
+<!-- DASHBOARD -->
+	<section class="container py-5">
+		<div class="row g-4">
+
+			<div class="col-md-3">
+				<div class="card shadow text-center h-100">
+					<div class="card-body">
+
+						<h2 class="text-primary">
+							42
+						</h2>
+
+						<h5>
+							Especialidades
+						</h5>
+
+						<p class="text-muted mb-0">
+							Servicios disponibles
+						</p>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="card shadow text-center h-100">
+					<div class="card-body">
+
+						<h2 class="text-primary">
+							125
+						</h2>
+
+						<h5>
+							Documentos
+						</h5>
+
+						<p class="text-muted mb-0">
+							Material publicado
+						</p>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="card shadow text-center h-100">
+					<div class="card-body">
+
+						<h2 class="text-primary">
+							24/7
+						</h2>
+
+						<h5>
+							Acceso
+						</h5>
+
+						<p class="text-muted mb-0">
+							Disponible desde cualquier dispositivo
+						</p>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="card shadow text-center h-100">
+					<div class="card-body">
+
+						<h2 class="text-primary">
+							08/07
+						</h2>
+
+						<h5>
+							Última actualización
+						</h5>
+
+						<p class="text-muted mb-0">
+							Documentación vigente
+						</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+<!-- BUSCADOR -->
+	<section class="container pb-5">
+		<div class="row">
+			<div class="col-lg-9">
+				<input type="search" class="form-control form-control-lg" placeholder="Buscar documentos, especialidades o palabras clave...">
+			</div>
+
+			<div class="col-lg-3">
+				<button class="btn btn-primary btn-lg w-100">
+					Buscar
+				</button>
+			</div>
+		</div>
+	</section>
+
+
+
+<!-- CONTENIDO -->
+	<section class="container pb-5">
+		<div class="row">
+
+
+	<!-- COLUMNA PRINCIPAL -->
+			<div class="col-lg-8">
+
+		<!-- DOCUMENTOS -->
+			<div id="documentos" class="card shadow">					
+					<div class="card-header bg-primary text-white">
+						<h3 class="mb-0">
+							Especialidades Médicas
+						</h3>
+					</div>
+
+					<div class="card-body">
+						<div class="accordion" id="especialidades">
+
+			<!-- ESPECIALIDADES CLÍNICAS -->
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#clinicas">
+										Especialidades Clínicas
+									</button>
+								</h2>
+
+								<div id="clinicas" class="accordion-collapse collapse show">
+									<div class="accordion-body">
+										<div class="accordion" id="accordionClinicas">
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#paliativos">
+														Unidad de Cuidados Paliativos
+													</button>
+												</h2>
+
+												<div id="paliativos" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#emergencia">
+														Emergencia
+													</button>
+												</h2>
+
+												<div id="emergencia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#neonatologia">
+														Neonatología
+													</button>
+												</h2>
+
+												<div id="neonatologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#medicina">
+														Dpto. Clínico de Medicina
+													</button>
+												</h2>
+
+												<div id="medicina" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#cardiologia">
+														Cardiología
+													</button>
+												</h2>
+
+												<div id="cardiologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<ul class="list-group">
+
+															<li class="list-group-item d-flex justify-content-between">
+																Indicaciones ecocardiograma con dobutamina
+																<button class="btn btn-outline-primary btn-sm">Ver documento</button>
+															</li>
+
+															<li class="list-group-item d-flex justify-content-between">
+																Indicaciones para pacientes en tratamiento con warfarina
+																<button class="btn btn-outline-primary btn-sm">Ver documento</button>
+															</li>
+
+															<li class="list-group-item d-flex justify-content-between">
+																Indicaciones ecocardiograma transesofágico
+																<button class="btn btn-outline-primary btn-sm">Ver documento</button>
+															</li>
+
+														</ul>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#clinicaA">
+														Clínica Médica A
+													</button>
+												</h2>
+
+												<div id="clinicaA" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#clinicaB">
+														Clínica Médica B
+													</button>
+												</h2>
+
+												<div id="clinicaB" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#clinicaC">
+														Clínica Médica C
+													</button>
+												</h2>
+
+												<div id="clinicaC" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">                                           
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#dermatologia">
+														Dermatología
+													</button>
+												</h2>
+												
+												<div id="dermatologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>                          
+											</div>
+
+											<div class="accordion-item">                                           
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#endocrinologia">
+														Endocrinología
+													</button>
+												</h2>
+												
+												<div id="endocrinologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>                                       
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#gastroenterologia">
+														Gastroenterología
+													</button>
+												</h2>
+
+												<div id="gastroenterologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+
+														<div class="accordion">
+															<div class="accordion-item">
+
+																<h2 class="accordion-header">
+																	<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#ostomias">
+																		Unidad de Ostomías
+																	</button>
+																</h2>
+
+																<div id="ostomias" class="accordion-collapse collapse">
+																	<div class="accordion-body">
+																		<ul class="list-group">
+
+																			<li class="list-group-item d-flex justify-content-between">
+																				Pauta para pacientes ostomizados
+																				<button class="btn btn-outline-primary btn-sm">Ver documento</button>
+																			</li>
+
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#geriatria">
+														Geriatría
+													</button>
+												</h2>
+												
+												<div id="geriatria" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>                                       
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#hematologia">
+														Hematología
+													</button>
+												</h2>
+												
+												<div id="hematologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#infectologia">
+														Infectología
+													</button>
+												</h2>
+												
+												<div id="infectologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>                                  
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#rehab">
+														Medicina Física, Rehabilitación y Medicina del Deporte
+													</button>
+												</h2>
+												
+												<div id="rehab" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>                                   
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#nefrologia">
+														Nefrología
+													</button>
+												</h2>
+												
+												<div id="nefrologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#neurologia">
+														Neurología
+													</button>
+												</h2>
+												
+												<div id="neurologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#oncologia">
+														Oncología
+													</button>
+												</h2>
+												
+												<div id="oncologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#psiquiatria">
+														Psiquiatría
+													</button>
+												</h2>
+												
+												<div id="psiquiatria" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#autoinmune">
+														U.E. Autoinmunes Sistémicas
+													</button>
+												</h2>
+												
+												<div id="autoinmune" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+			<!-- ESPECIALIDADES QUIRÚRGICAS -->
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#quirurgicas">
+										Especialidades Quirúrgicas
+									</button>
+								</h2>
+
+								<div id="quirurgicas" class="accordion-collapse collapse">
+									<div class="accordion-body">
+										<div class="accordion">
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#dcirugia">
+														Dpto. Clínico de Cirugía
+													</button>
+												</h2>
+												
+												<div id="dcirugia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#anestesiologia">
+														Anestesiología
+													</button>
+												</h2>
+												
+												<div id="anestesiologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#plastica">
+														Cirugía Plástica y Quemados
+													</button>
+												</h2>
+												
+												<div id="plastica" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#vascular">
+														Cirugía Vascular Periférica
+													</button>
+												</h2>
+												
+												<div id="vascular" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#ginecotocologiaB">
+														Ginecotocología B
+													</button>
+												</h2>
+
+												<div id="ginecotocologiaB" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<ul class="list-group">
+
+															<li class="list-group-item d-flex justify-content-between">
+																Indicaciones de interrupción voluntaria del embarazo
+																<button class="btn btn-outline-primary btn-sm">Ver documento</button>
+															</li>
+
+														</ul>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#neurocirugia">
+														Neurocirugía
+													</button>
+												</h2>
+
+												<div id="neurocirugia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#odontologia">
+														Odontología
+													</button>
+												</h2>
+												
+												<div id="odontologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#oftalmologia">
+														Oftalmología
+													</button>
+												</h2>
+												
+												<div id="oftalmologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#otorrinolaringologia">
+														Otorrinolaringología
+													</button>
+												</h2>
+												
+												<div id="otorrinolaringologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#quirurgicaA">
+														Quirúrgica A
+													</button>
+												</h2>
+												
+												<div id="quirurgicaA" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#quirurgicaB">
+														Quirúrgica B
+													</button>
+												</h2>
+												
+												<div id="quirurgicaB" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#quirurgicaF">
+														Quirúrgica F
+													</button>
+												</h2>
+												
+												<div id="quirurgicaF" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#urologia">
+														Urología
+													</button>
+												</h2>
+
+												<div id="urologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<ul class="list-group">
+
+															<li class="list-group-item d-flex justify-content-between">
+																Prostatectomía radical (indicaciones e información para el paciente)
+																<button class="btn btn-outline-primary btn-sm">Ver documento</button>
+															</li>
+
+														</ul>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#traumatologia">
+														Traumatología y Ortopedia de Adultos
+													</button>
+												</h2>
+												
+												<div id="traumatologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+			<!-- CENTROS -->
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#centros">
+										Centros y Unidades Especializadas
+									</button>
+								</h2>
+
+								<div id="centros" class="accordion-collapse collapse">
+									<div class="accordion-body">
+										<div class="accordion">
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#centrocardiovascular">
+														Centro Cardiovascular
+													</button>
+												</h2>
+
+												<div id="centrocardiovascular" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="accordion">
+
+															<div class="accordion-item">
+																<h2 class="accordion-header">
+																	<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#hemodinamia">
+																		Hemodinamia
+																	</button>
+																</h2>
+
+																<div id="hemodinamia" class="accordion-collapse collapse">
+																	<div class="accordion-body">
+																		<div class="alert alert-light mb-0">
+																			Actualmente no hay documentación publicada.
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															<div class="accordion-item">
+																<h2 class="accordion-header">
+																	<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#cirurgiacardiaca">
+																		Cirugía Cardíaca
+																	</button>
+																</h2>
+
+																<div id="cirurgiacardiaca" class="accordion-collapse collapse">
+																	<div class="accordion-body">
+																		<div class="alert alert-light mb-0">
+																			Actualmente no hay documentación publicada.
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#tabaquismo">
+														Unidad de Tabaquismo
+													</button>
+												</h2>
+												
+												<div id="tabaquismo" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#mnuclear">
+														Medicina Nuclear
+													</button>
+												</h2>
+
+												<div id="mnuclear" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<ul class="list-group">
+
+															<li class="list-group-item d-flex justify-content-between">
+																Estudios diagnósticos con pertecneciato
+																<button class="btn btn-outline-primary btn-sm">Ver documento</button>
+															</li>
+
+															<li class="list-group-item d-flex justify-content-between">
+																Información sobre Centellograma de perfusión miocárdica
+																<button class="btn btn-outline-primary btn-sm">Ver documento</button>
+															</li>
+
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+			<!-- DIAGNÓSTICOS -->
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#diagnosticos">
+										Servicios Diagnósticos
+									</button>
+								</h2>
+
+								<div id="diagnosticos" class="accordion-collapse collapse">
+									<div class="accordion-body">
+										<div class="accordion">
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#imagenologia">
+														Imagenología
+													</button>
+												</h2>
+
+												<div id="imagenologia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<ul class="list-group">
+
+															<li class="list-group-item d-flex justify-content-between">
+																Preparación para estudios imagenológicos
+																<button class="btn btn-outline-primary btn-sm">Ver documento</button>
+															</li>
+
+														</ul>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#hemoterapia">
+														Hemoterapia
+													</button>
+												</h2>
+												
+												<div id="hemoterapia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="accordion-item">
+												<h2 class="accordion-header">
+													<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#radioterapia">
+														Radioterapia
+													</button>
+												</h2>
+												
+												<div id="radioterapia" class="accordion-collapse collapse">
+													<div class="accordion-body">
+														<div class="alert alert-light mb-0">
+															Actualmente no hay documentación publicada para esta especialidad.
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+	<!-- PANEL LATERAL -->
+			<div class="col-lg-4 mt-4 mt-lg-0">
+
+		<!-- ACCESO RÁPIDO -->
+				<div id="accesoRapido" class="card shadow mb-4">
+					<div class="card-header bg-primary text-white">
+						<h5 class="mb-0">
+							Acceso rápido
+						</h5>
+					</div>
+
+					<div class="card-body">
+						<div class="d-grid gap-2">
+							<button class="btn btn-outline-primary">
+								Buscar documentación
+							</button>
+
+							<button class="btn btn-outline-primary">
+								Especialidades médicas
+							</button>
+
+							<button class="btn btn-outline-primary">
+								Preguntas frecuentes
+							</button>
+						</div>
+					</div>
+				</div>
+
+
+		<!-- INFORMACIÓN -->
+				<div id="informacion" class="card shadow mb-4">
+					<div class="card-header bg-primary text-white">
+						<h5 class="mb-0">
+							Información
+						</h5>
+					</div>
+
+					<div class="card-body">
+						<p class="mb-2">
+							Este portal reúne documentación oficial destinada a pacientes y equipos de salud del Hospital de Clínicas.
+						</p>
+
+						<p class="mb-0">
+							Todos los documentos disponibles corresponden a versiones vigentes publicadas por funcionarios autorizados.
+						</p>
+					</div>
+				</div>
+
+
+		<!-- SOPORTE -->
+				<div id="ayuda" class="card shadow">
+					<div class="card-header bg-primary text-white">
+						<h5 class="mb-0">
+							¿Necesita ayuda?
+						</h5>
+					</div>
+
+					<div class="card-body">
+						<p>
+							Si necesita asistencia para utilizar el portal o no encuentra la información que busca, comuníquese con el Departamento de Informática del Hospital de Clínicas.
+						</p>
+
+						<button class="btn btn-primary w-100">
+							Contactar soporte
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+<!-- FAQ -->
+    <section id="faq" class="container pb-5">
+	    <div class="card shadow">
+		    <div class="card-header bg-primary text-white">
+			    <h3 class="mb-0">
+				    Preguntas Frecuentes
+			    </h3>
+		    </div>
+
+		    <div class="card-body">
+			    <div class="accordion">
+
+				    <div class="accordion-item">
+					    <h2 class="accordion-header">
+						    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">
+							    ¿Cómo puedo encontrar un documento?
+						    </button>
+					    </h2>
+
+					    <div id="faq1" class="accordion-collapse collapse show">
+						    <div class="accordion-body">
+							    Puede utilizar el buscador ubicado en la parte superior del portal o navegar por las especialidades médicas hasta encontrar el documento que necesita.
+						    </div>
+					    </div>
+				    </div>
+
+				    <div class="accordion-item">
+					    <h2 class="accordion-header">
+						    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
+							    ¿La información publicada es oficial?
+						    </button>
+					    </h2>
+
+					    <div id="faq2" class="accordion-collapse collapse">
+						    <div class="accordion-body">
+							    Sí. Todo el material disponible en este portal es publicado y administrado por funcionarios autorizados del Hospital de Clínicas, garantizando que la información corresponda a las versiones vigentes.
+						    </div>
+					    </div>
+				    </div>
+
+				    <div class="accordion-item">
+					    <h2 class="accordion-header">
+						    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
+							    ¿Qué debo hacer si no encuentro un documento?
+						    </button>
+					    </h2>
+
+					    <div id="faq3" class="accordion-collapse collapse">
+						    <div class="accordion-body">
+							    Si el documento que busca no se encuentra disponible, consulte con el personal del servicio correspondiente o comuníquese con el Departamento de Informática del Hospital de Clínicas.
+						    </div>
+					    </div>
+				    </div>
+
+				    <div class="accordion-item">
+					    <h2 class="accordion-header">
+						    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
+							    ¿Puedo acceder desde mi teléfono móvil?
+						    </button>
+					    </h2>
+
+					    <div id="faq4" class="accordion-collapse collapse">
+						    <div class="accordion-body">
+							    Sí. El portal ha sido diseñado para funcionar tanto en computadoras como en dispositivos móviles. También es posible acceder directamente a un documento escaneando su código QR correspondiente.
+						    </div>
+					    </div>
+				    </div>
+
+				    <div class="accordion-item">
+					    <h2 class="accordion-header">
+						    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq6">
+							    ¿Qué sucede si un documento fue actualizado?
+						    </button>
+					    </h2>
+
+					    <div id="faq6" class="accordion-collapse collapse">
+						    <div class="accordion-body">
+							    Cada vez que un documento es actualizado por un funcionario autorizado, la versión vigente reemplaza a la anterior, permitiendo que los usuarios consulten siempre la información más reciente.
+						    </div>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+    </section>
+
+
+
+<!-- FOOTER -->
+    <footer class="text-center py-4 mt-5">
+        <h5>
+            Hospital de Clínicas
+        </h5>
+
+        <p class="mb-1">
+            Sistema de Gestión Documental y Encuestas
+        </p>
+
+        <p class="mb-1">
+            UTU Arroyo Seco
+        </p>
+
+        <p class="mb-1">
+            Proyecto Integrador
+        </p>
+
+        <p class="mb-0">
+            Nordlyn © 2026
+        </p>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</hmtl>
