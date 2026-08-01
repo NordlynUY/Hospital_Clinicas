@@ -8,9 +8,7 @@
 
 	<title>Hospital de Clínicas | Portal del Usuario</title>
 
-	<link
-		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-		rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
 	<style>
 
@@ -51,7 +49,7 @@
 
 <body>
 <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
 		<div class="container">
 			<a class="navbar-brand fw-bold text-primary" href="#">
 				Hospital de Clínicas
@@ -65,26 +63,32 @@
 				<ul class="navbar-nav ms-auto">
 
 					<li class="nav-item">
-						<a class="nav-link active" href="#">
-							Inicio
-						</a>
-					</li>
-
-					<li class="nav-item">
 						<a class="nav-link" href="#documentos">
 							Documentación
 						</a>
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" href="#faq">
-							FAQ
+						<a class="nav-link" href="#accesoRapido">
+							Acceso Rápido
 						</a>
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link text-danger" href="#">
-							Cerrar sesión
+						<a class="nav-link" href="#informacion">
+							Información
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#ayuda">
+							Ayuda
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#faq">
+							FAQ
 						</a>
 					</li>
 
@@ -1042,50 +1046,8 @@
 	<!-- PANEL LATERAL -->
 			<div class="col-lg-4 mt-4 mt-lg-0">
 
-		<!-- SESIÓN -->
-				<div class="card shadow mb-4">
-					<div class="card-header bg-primary text-white">
-						<h5 class="mb-0">
-							Mi sesión
-						</h5>
-					</div>
-
-					<div class="card-body">
-						<p>
-							<strong>
-								Nombre:
-							</strong><br>
-							Juan Pérez
-						</p>
-
-						<p>
-							<strong>
-								Rol:
-							</strong><br>
-							Usuario
-						</p>
-
-						<p>
-							<strong>
-								Último acceso:
-							</strong><br>
-							08/07/2026 - 14:32
-						</p>
-
-						<p class="mb-0">
-							<strong>
-								Estado de la cuenta:
-							</strong><br>
-							<span class="badge bg-success">
-								Activa
-							</span>
-						</p>
-					</div>
-				</div>
-
-
 		<!-- ACCESO RÁPIDO -->
-				<div class="card shadow mb-4">
+				<div id="accesoRapido" class="card shadow mb-4">
 					<div class="card-header bg-primary text-white">
 						<h5 class="mb-0">
 							Acceso rápido
@@ -1111,7 +1073,7 @@
 
 
 		<!-- INFORMACIÓN -->
-				<div class="card shadow mb-4">
+				<div id="informacion" class="card shadow mb-4">
 					<div class="card-header bg-primary text-white">
 						<h5 class="mb-0">
 							Información
@@ -1131,7 +1093,7 @@
 
 
 		<!-- SOPORTE -->
-				<div class="card shadow">
+				<div id="ayuda" class="card shadow">
 					<div class="card-header bg-primary text-white">
 						<h5 class="mb-0">
 							¿Necesita ayuda?
@@ -1218,20 +1180,6 @@
 					    <div id="faq4" class="accordion-collapse collapse">
 						    <div class="accordion-body">
 							    Sí. El portal ha sido diseñado para funcionar tanto en computadoras como en dispositivos móviles. También es posible acceder directamente a un documento escaneando su código QR correspondiente.
-						    </div>
-					    </div>
-				    </div>
-
-				    <div class="accordion-item">
-					    <h2 class="accordion-header">
-						    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">
-							    ¿Necesito iniciar sesión para consultar la documentación?
-						    </button>
-					    </h2>
-
-					    <div id="faq5" class="accordion-collapse collapse">
-						    <div class="accordion-body">
-							    Sí. El acceso al portal requiere autenticación mediante cédula de identidad y contraseña para garantizar un acceso seguro a la documentación institucional.
 						    </div>
 					    </div>
 				    </div>
