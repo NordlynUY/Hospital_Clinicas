@@ -1,0 +1,14 @@
+Options -Indexes
+DirectoryIndex index.php
+<FilesMatch "\.(sql|md|ini|log)$">
+    Require all denied
+</FilesMatch>
+
+RewriteEngine On
+RewriteRule ^index\.html$ index.php?p=inicio [QSA,L]
+RewriteRule ^login\.html$ index.php?p=login [QSA,L]
+RewriteRule ^portal_usuario\.html$ index.php?p=documentos [QSA,L]
+RewriteRule ^portal_funcionario\.html$ index.php?p=panel [QSA,L]
+RewriteRule ^portal_admin\.html$ index.php?p=admin [QSA,L]
+RewriteRule ^encuestas_buscar\.html$ index.php?p=encuestas [QSA,L]
+RewriteRule ^encuesta\.html$ index.php?p=responder [QSA,L]
