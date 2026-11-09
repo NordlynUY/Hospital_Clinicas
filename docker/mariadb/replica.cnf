@@ -1,0 +1,6 @@
+[mysqld]
+server-id=2
+relay_log=relay-bin
+read_only=ON
+log_bin=mariadb-bin
+binlog_format=ROW

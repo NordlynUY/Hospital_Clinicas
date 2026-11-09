@@ -4,10 +4,10 @@ Aplicación académica para el Hospital de Clínicas. Está desarrollada con PHP
 
 ## 1. Requisitos
 
-- Debian 12 o superior.
+- Debian 13 (Trixie).
 - Apache 2 con `mod_rewrite`.
-- PHP 8.2 o superior.
-- MariaDB 10.6 o superior.
+- PHP 8.4 o superior.
+- MariaDB 11.8 o superior.
 - Extensiones PHP: `php-mysql`, `php-mbstring`, `php-xml`, `php-curl`, `php-fileinfo`.
 - Conexión a Internet para cargar Bootstrap y validar reCAPTCHA de prueba.
 
@@ -226,3 +226,80 @@ Si la base de datos ya estaba creada antes de esta versión, ejecutar una sola v
 El sistema utiliza cuatro grupos visuales y 43 especialidades individuales. Los nombres de los grupos no son categorías de base de datos y no admiten documentos. Los documentos, usuarios y encuestas se relacionan únicamente con una especialidad individual.
 
 Para una base ya existente, ejecutar `database/04_catalogo_especialidades.sql` desde phpMyAdmin > SQL. Este proceso conserva documentos y encuestas, pero retira las asignaciones a categorías antiguas que ya no existen. Después se pueden volver a asignar a una especialidad válida desde Gestión documental.
+
+
+## 11. Despliegue alternativo con Docker Compose
+
+El proyecto también incluye un despliegue mediante Docker Compose. Esta modalidad es independiente de la instalación nativa de Apache y MariaDB descrita anteriormente.
+
+Los servicios incluidos son:
+
+- `web`: aplicación SIGSM con PHP 8.4 y Apache.
+- `db-primary`: MariaDB principal.
+- `db-replica`: MariaDB réplica para la práctica de replicación Master-Slave.
+- `backup-server`: servicio SSH para recibir copias de seguridad en un volumen independiente.
+
+Para iniciar los servicios:
+
+```bash
+docker compose up -d --build
+```
+
+La aplicación de esta modalidad se abre en:
+
+```text
+http://localhost:8080/
+```
+
+Los puertos 8080 y 2222 están vinculados a `127.0.0.1`, por lo que estos servicios de demostración solo aceptan conexiones locales. Docker puede publicar puertos sin pasar por las reglas habituales de UFW; por eso no se publican en todas las interfaces de red.
+
+La instalación nativa continúa disponible en `http://localhost/`. No se deben ejecutar ambas modalidades utilizando el mismo puerto.
+
+### Configuración de la replicación
+
+Con los contenedores iniciados, ejecutar una vez:
+
+```bash
+sudo bash iniciar_replicacion.sh
+```
+
+El script crea una copia inicial de `sigsm_nordlyn` desde `db-primary` y configura `db-replica` con las coordenadas del registro binario. Así se simula la replicación en un único equipo físico mediante dos contenedores separados.
+
+### Servidor de respaldo Docker
+
+El contenedor `backup-server` escucha en el puerto 2222 del equipo anfitrión y almacena los archivos en un volumen Docker persistente. Para enviar las copias locales:
+
+```bash
+sudo bash respaldar_docker.sh
+```
+
+La contraseña académica inicial se encuentra en el archivo `.env`.
+
+Esta modalidad permite demostrar la separación de servicios en un entorno de laboratorio. Para obtener alta disponibilidad física real, el servidor de respaldo debe trasladarse a otro equipo o almacenamiento independiente.
+
+### Respaldo de la instalación nativa
+
+Para crear una copia de la base de datos y de los archivos de la aplicación:
+
+```bash
+sudo bash /home/hospitaldeclinicas/Nordlyn/respaldar_base_datos.sh
+```
+
+Los respaldos se guardan en `/home/hospitaldeclinicas/Backups/Nordlyn/`.
+
+
+## 12. Administración del servidor (ASO)
+
+Dentro de la carpeta `Nordlyn_ASO` se incluyen scripts para:
+
+- crear respaldos comprimidos de `sigsm_nordlyn` y de los archivos de la aplicación;
+- restaurar la base de datos desde un archivo `.sql.gz`;
+- enviar respaldos mediante SSH y rsync a un segundo servidor;
+- configurar un servidor Debian de respaldo;
+- programar respaldos diarios a las 02:00 mediante systemd;
+- monitorear RAM, disco y carga del procesador cada cinco minutos;
+- consultar los registros de Apache, MariaDB, auditoría de SIGSM y alertas del sistema.
+
+La configuración nativa de la aplicación continúa utilizando MariaDB en `localhost`. La replicación incluida en Docker Compose utiliza una red interna entre los contenedores `db-primary` y `db-replica`.
+
+Para la configuración de Docker Engine y Compose se utiliza el repositorio oficial de Docker para Debian 13 (Trixie).

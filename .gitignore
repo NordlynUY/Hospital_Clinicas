@@ -1,0 +1,4 @@
+.env
+*.sql.gz
+*.tar.gz
+/vendor/

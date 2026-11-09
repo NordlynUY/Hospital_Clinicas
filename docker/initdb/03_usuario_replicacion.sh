@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+mariadb -uroot -p"${MARIADB_ROOT_PASSWORD}" <<SQL
+CREATE USER IF NOT EXISTS 'replicador'@'%' IDENTIFIED BY '${DB_REPL_PASSWORD}';
+GRANT REPLICATION SLAVE ON *.* TO 'replicador'@'%';
+FLUSH PRIVILEGES;
+SQL

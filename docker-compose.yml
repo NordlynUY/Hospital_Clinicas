@@ -1,0 +1,83 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sigsm_web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:80"
+    environment:
+      DB_HOST: db-primary
+      DB_NAME: sigsm_nordlyn
+      DB_USER: sigsm_user
+      DB_PASS: ${DB_APP_PASSWORD}
+      BASE_URL: ${APP_BASE_URL}
+      RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY}
+      RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY}
+    volumes:
+      - ./:/var/www/html/sigsm
+    command: ["bash", "-lc", "chown -R www-data:www-data /var/www/html/sigsm/docs 2>/dev/null || true; apache2-foreground"]
+    depends_on:
+      db-primary:
+        condition: service_healthy
+
+  db-primary:
+    image: mariadb:11.8
+    container_name: sigsm_db_primary
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MARIADB_DATABASE: sigsm_nordlyn
+      MARIADB_USER: sigsm_user
+      MARIADB_PASSWORD: ${DB_APP_PASSWORD}
+      DB_REPL_PASSWORD: ${DB_REPL_PASSWORD}
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - mariadb_primary_data:/var/lib/mysql
+      - ./docker/mariadb/primary.cnf:/etc/mysql/conf.d/primary.cnf:ro
+      - ./docker/initdb/01_estructura.sql:/docker-entrypoint-initdb.d/01_estructura.sql:ro
+      - ./docker/initdb/02_datos_prueba.sql:/docker-entrypoint-initdb.d/02_datos_prueba.sql:ro
+      - ./docker/initdb/03_usuario_replicacion.sh:/docker-entrypoint-initdb.d/03_usuario_replicacion.sh:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  db-replica:
+    image: mariadb:11.8
+    container_name: sigsm_db_replica
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - mariadb_replica_data:/var/lib/mysql
+      - ./docker/mariadb/replica.cnf:/etc/mysql/conf.d/replica.cnf:ro
+    depends_on:
+      db-primary:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  backup-server:
+    build:
+      context: ./docker/backup
+    container_name: nordlyn_backup_server
+    restart: unless-stopped
+    environment:
+      BACKUP_USER: backupuser
+      BACKUP_PASSWORD: ${BACKUP_SERVER_PASSWORD}
+    ports:
+      - "127.0.0.1:2222:22"
+    volumes:
+      - backup_data:/srv/backups
+
+volumes:
+  mariadb_primary_data:
+  mariadb_replica_data:
+  backup_data:
